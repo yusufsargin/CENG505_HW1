@@ -60,6 +60,8 @@ int main(int argc, char* argv[]) {
    if (argc != 2) Usage(argv[0]);
    thread_count = atoi(argv[1]);
    thread_handles = malloc(thread_count*sizeof(pthread_t));
+   m = atoi(argv[1])
+   n = atoi(argv[2])
 
    printf("Enter m and n\n");
    scanf("%d%d", &m, &n);
