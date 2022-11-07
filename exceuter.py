@@ -4,6 +4,7 @@ import subprocess
 
 
 matrix_arrays = [
+    8, # 8x8
       16, # 16x16
     32, # 32x32
     64, # 16x64
@@ -11,6 +12,7 @@ matrix_arrays = [
     512, # 512x512
 ]
 threadCount = [
+    1,
     4,
     8,
     16,
@@ -35,7 +37,7 @@ times = 0
 
 with open("output.txt", "w") as txt_file:
     for index, timeItem in enumerate(timeArray):
-        if(index %5 == 0 and index > 0):
+        if(index %len(threadCount) == 0 and index > 0):
             times = times +1
         text ="Execution time in " + str(threadCount[times])+" tread " + "for "+ str(matrix_arrays[index%mod])+ "x", str(matrix_arrays[index%mod])+ " "+ str(timeItem.microseconds)+ " microseconds" 
         print(text)
